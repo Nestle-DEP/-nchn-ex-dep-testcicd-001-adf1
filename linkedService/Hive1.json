@@ -1,0 +1,22 @@
+{
+	"name": "Hive1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "Hive",
+		"typeProperties": {
+			"host": "ha002-nchn-ex-dep-hdi-int.azurehdinsight.cn",
+			"port": 443,
+			"authenticationType": "WindowsAzureHDInsightService",
+			"serviceDiscoveryMode": false,
+			"useNativeQuery": false,
+			"username": "eagle",
+			"enableSsl": false,
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI1YWMzMDlhZC04NTAzLTRmNDMtYWQ3YS1jMzlkNGM5MTllYjgiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "adf-ir",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

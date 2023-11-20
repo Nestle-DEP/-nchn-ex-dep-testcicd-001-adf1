@@ -1,0 +1,11 @@
+{
+	"name": "AzureKeyVault2",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://nchnexdepeagl039key.vault.azure.cn/"
+		}
+	}
+}

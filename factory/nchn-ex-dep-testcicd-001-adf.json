@@ -1,0 +1,9 @@
+{
+	"name": "nchn-ex-dep-testcicd-001-adf",
+	"location": "chinaeast2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "c2267f3d-c5a8-4475-b9c8-52afc2ea4192",
+		"tenantId": "de575837-ebbb-4b6f-9137-e25e8f11e138"
+	}
+}
