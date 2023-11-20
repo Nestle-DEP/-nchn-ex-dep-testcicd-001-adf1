@@ -1,0 +1,147 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "nchn-ex-dep-testcicd-001-adf"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"DataLake_Secondary_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DataLake_Secondary'"
+		},
+		"HDI_Hadoop_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'HDI_Hadoop'"
+		},
+		"Hive1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Hive1'"
+		},
+		"ADB_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0422-061610-qdhfcx4p"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://nchnexdep003sta.dfs.core.chinacloudapi.cn/"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://nchnexdeptestcicd001key.vault.azure.cn/"
+		},
+		"AzureKeyVault2_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://nchnexdepeagl039key.vault.azure.cn/"
+		},
+		"DataLake_Primary_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://nchnexdep003sta.dfs.core.chinacloudapi.cn"
+		},
+		"DataLake_Secondary_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://nchnexdep004sta.dfs.core.chinacloudapi.cn"
+		},
+		"HDI_Hadoop_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "operator"
+		},
+		"Hive1_properties_typeProperties_host": {
+			"type": "string",
+			"defaultValue": "ha002-nchn-ex-dep-hdi-int.azurehdinsight.cn"
+		},
+		"Hive1_properties_typeProperties_username": {
+			"type": "string",
+			"defaultValue": "eagle"
+		},
+		"adf-ir-cnbei_properties_typeProperties_linkedInfo_resourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/3ac482b6-893e-4750-b5b8-0e94a3bd522c/resourcegroups/nchn-pr-dep-dl-rgp/providers/Microsoft.DataFactory/factories/nchn-pr-dep-001-adf/integrationruntimes/adf-ir-cnbei-prod"
+		},
+		"adf-ir_properties_typeProperties_linkedInfo_resourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/738b238c-d18b-4b67-98e2-2d514fcaa6ee/resourcegroups/nchn-ex-dep-dl-rgp/providers/Microsoft.DataFactory/factories/nchn-ex-dep-001-adf/integrationruntimes/adf-ir"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "nchn-ex-dep-testcicd-001-adf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"DataLake_Secondary_accountKey": {
+						"value": "[parameters('DataLake_Secondary_accountKey')]"
+					},
+					"Hive1_password": {
+						"value": "[parameters('Hive1_password')]"
+					},
+					"HDI_Hadoop_password": {
+						"value": "[parameters('HDI_Hadoop_password')]"
+					},
+					"ADB_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('ADB_properties_typeProperties_existingClusterId')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"AzureKeyVault2_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault2_properties_typeProperties_baseUrl')]"
+					},
+					"DataLake_Primary_properties_typeProperties_url": {
+						"value": "[parameters('DataLake_Primary_properties_typeProperties_url')]"
+					},
+					"adf-ir-cnbei_properties_typeProperties_linkedInfo_resourceId": {
+						"value": "[parameters('adf-ir-cnbei_properties_typeProperties_linkedInfo_resourceId')]"
+					},
+					"adf-ir_properties_typeProperties_linkedInfo_resourceId": {
+						"value": "[parameters('adf-ir_properties_typeProperties_linkedInfo_resourceId')]"
+					},
+					"DataLake_Secondary_properties_typeProperties_url": {
+						"value": "[parameters('DataLake_Secondary_properties_typeProperties_url')]"
+					},
+					"Hive1_properties_typeProperties_host": {
+						"value": "[parameters('Hive1_properties_typeProperties_host')]"
+					},
+					"Hive1_properties_typeProperties_username": {
+						"value": "[parameters('Hive1_properties_typeProperties_username')]"
+					},
+					"HDI_Hadoop_properties_typeProperties_userName": {
+						"value": "[parameters('HDI_Hadoop_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
