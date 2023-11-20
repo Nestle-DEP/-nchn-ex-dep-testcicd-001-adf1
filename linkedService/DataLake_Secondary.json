@@ -1,0 +1,16 @@
+{
+	"name": "DataLake_Secondary",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://nchnexdep004sta.dfs.core.chinacloudapi.cn",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJmMTBjODQ4Ny04NGVhLTQ5NjctYTMyNC0xN2QwNzRkYzNjMTAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "adf-ir",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

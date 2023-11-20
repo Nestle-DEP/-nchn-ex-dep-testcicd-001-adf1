@@ -1,0 +1,12 @@
+{
+	"name": "adf-ir-cnbei",
+	"properties": {
+		"type": "SelfHosted",
+		"typeProperties": {
+			"linkedInfo": {
+				"resourceId": "/subscriptions/3ac482b6-893e-4750-b5b8-0e94a3bd522c/resourcegroups/nchn-pr-dep-dl-rgp/providers/Microsoft.DataFactory/factories/nchn-pr-dep-001-adf/integrationruntimes/adf-ir-cnbei-prod",
+				"authorizationType": "Rbac"
+			}
+		}
+	}
+}

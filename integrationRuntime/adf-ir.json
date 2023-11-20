@@ -1,0 +1,12 @@
+{
+	"name": "adf-ir",
+	"properties": {
+		"type": "SelfHosted",
+		"typeProperties": {
+			"linkedInfo": {
+				"resourceId": "/subscriptions/738b238c-d18b-4b67-98e2-2d514fcaa6ee/resourcegroups/nchn-ex-dep-dl-rgp/providers/Microsoft.DataFactory/factories/nchn-ex-dep-001-adf/integrationruntimes/adf-ir",
+				"authorizationType": "Rbac"
+			}
+		}
+	}
+}
