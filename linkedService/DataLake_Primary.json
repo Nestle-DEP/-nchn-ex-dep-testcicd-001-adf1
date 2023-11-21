@@ -1,11 +1,11 @@
 {
 	"name": "DataLake_Primary",
-	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
 		"annotations": [],
 		"type": "AzureBlobFS",
 		"typeProperties": {
-			"url": "https://nchnexdep003sta.dfs.core.chinacloudapi.cn"
+			"url": "https://nchnstdep003sta.dfs.core.chinacloudapi.cn"
 		}
-	}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
 }
