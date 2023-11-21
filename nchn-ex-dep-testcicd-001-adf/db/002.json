@@ -1,0 +1,31 @@
+{ 
+  "ex": {
+	   "Azure_SQL_MESDB_connectionString": "Integrated Security=False;encrypt=True;Connection Timeout=30;Data Source=nchn-ex-dep-001-sqs.database.chinacloudapi.cn;Initial Catalog=mes_db;User ID=mesdbuser",
+       "AZURE_SSDB_AppMdm2_connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=nchn-ex-dep-001-sqs.database.chinacloudapi.cn;initial catalog=ShenZhouExpAppMdm2;user id=ExpAppMdm2Dbuser",
+	   "AZURE_SSDB_AppMdm2_prd_connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=nchn-pr-dep-001-sqs.database.chinacloudapi.cn;initial catalog=MDM2;user id=mdm2dbuser",
+	   "AZURE_SSDB_AppMdm2_stg_connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=nchn-st-dep-001-sqs.database.chinacloudapi.cn;initial catalog=MDM2;user id=mdm2dbuser",
+	   "AZURE_SSDB_eagle_connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=nchn-ex-dep-001-sqs.database.chinacloudapi.cn;initial catalog=eagle;user id=eagledbuser",
+	   "AZURE_SSDB_WyethMDM_connectionString": "Integrated Security=False;encrypt=True;Connection Timeout=30;Data Source=nchn-ex-dep-001-sqs.database.chinacloudapi.cn;Initial Catalog=WyethMDM;User ID=WyethMDMDbuser",
+	   "CNSHMD0201_WyethDB_connectionString": "integrated security=True;data source=CNSHMD0201\\VSAPP00,40001;initial catalog=WyethDB",
+	   "CNSHQD0017_TTLA_connectionString": "integrated security=True;data source=10.79.35.54,40001;initial catalog=TTL9_TE"
+  },
+  "st": {
+		"Azure_SQL_MESDB_connectionString": "Integrated Security=False;encrypt=True;Connection Timeout=30;Data Source=nchn-ex-dep-001-sqs.database.chinacloudapi.cn;Initial Catalog=mes_db;User ID=mesdbuser",
+		"AZURE_SSDB_AppMdm2_connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=nchn-ex-dep-001-sqs.database.chinacloudapi.cn;initial catalog=ShenZhouExpAppMdm2;user id=ExpAppMdm2Dbuser",
+		"AZURE_SSDB_AppMdm2_prd_connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=nchn-pr-dep-001-sqs.database.chinacloudapi.cn;initial catalog=MDM2;user id=mdm2dbuser",
+		"AZURE_SSDB_AppMdm2_stg_connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=nchn-st-dep-001-sqs.database.chinacloudapi.cn;initial catalog=MDM2;user id=mdm2dbuser",
+		"AZURE_SSDB_eagle_connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=nchn-ex-dep-001-sqs.database.chinacloudapi.cn;initial catalog=eagle;user id=eagledbuser",
+		"AZURE_SSDB_WyethMDM_connectionString": "Integrated Security=False;encrypt=True;Connection Timeout=30;Data Source=nchn-ex-dep-001-sqs.database.chinacloudapi.cn;Initial Catalog=WyethMDM;User ID=WyethMDMDbuser",
+		"CNSHMD0201_WyethDB_connectionString": "integrated security=True;data source=CNSHMD0201\\VSAPP00,40001;initial catalog=WyethDB",
+		"CNSHQD0017_TTLA_connectionString": "integrated security=True;data source=10.79.35.54,40001;initial catalog=TTL9_TE"
+
+  },
+  "pr": {
+	   "AZURE_SSDB_AppMdm2_connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=nchn-pr-dep-001-sqs.database.chinacloudapi.cn;initial catalog=ShenZhouExpAppMdm2;user id=ExpAppMdm2Dbuser",
+	   "AZURE_SSDB_AppMdm2_prd_connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=nchn-pr-dep-001-sqs.database.chinacloudapi.cn;initial catalog=MDM2;user id=mdm2dbuser",
+	   "AZURE_SSDB_AppMdm2_stg_connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=nchn-st-dep-001-sqs.database.chinacloudapi.cn;initial catalog=MDM2;user id=mdm2dbuser",
+	   "AZURE_SSDB_eagle_connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=nchn-pr-dep-001-sqs.database.chinacloudapi.cn;initial catalog=eagle;user id=eagledbuser",
+	   "AZURE_SSDB_WyethMDM_connectionString": "Integrated Security=False;Encrypt=True;Connection Timeout=30;Data Source=nchn-pr-dep-001-sqs.database.chinacloudapi.cn;Initial Catalog=WyethMDM;User ID=WyethMDMDbuser",
+	   "CNSHMD0201_WyethDB_connectionString": "integrated security=True;data source=CNSHMD0201\\VSAPP00,40001;initial catalog=WyethDB"
+  }
+}
