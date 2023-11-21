@@ -46,17 +46,13 @@ jobs:
       chmod u+x azcopy
     displayName: 'enable execute'
 
-  - script:
-      ./azcopy copy "https://nchnexdep004sta.blob.core.chinacloudapi.cn/workspace/scripts/$(scriptPath)?sv=2020-10-02&st=2022-06-14T03%3A17%3A23Z&se=2023-06-15T03%3A17%3A00Z&sr=c&sp=rl&sig=hu%2FMHVGYQnfbRzkO5QFrZper%2Fp0D8qhsc0K5astGNJc%3D" "./" --recursive=true
-    displayName: 'copy script from explake to local'
+
 
   - script:
       git clone -b hive_script $(gitRepo)
     displayName: 'git repo clone'
 
-  - script:
-      cp -r ./$(scriptPath) ./$(repoName)
-    displayName: 'copy script to repo'
+
 
   - script:
       chmod u+x git.sh
@@ -66,6 +62,4 @@ jobs:
       ./git.sh
     displayName: 'git submit'
 
-  - script:
-      ./azcopy copy "./$(scriptPath)/*" "https://nchnstdep004sta.blob.core.chinacloudapi.cn/workspace/scripts/$(scriptPath)?sv=2020-10-02&st=2022-06-23T02%3A59%3A15Z&se=2023-06-24T02%3A59%3A00Z&sr=c&sp=rwl&sig=qYabU7cRli2uMS3satkIN3muadQO5OZqdSF9MPxGOK0%3D" --recursive=true
-    displayName: 'copy script to stglake'
+
