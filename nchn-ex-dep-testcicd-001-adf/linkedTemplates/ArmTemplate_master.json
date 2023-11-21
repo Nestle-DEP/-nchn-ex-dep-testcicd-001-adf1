@@ -41,11 +41,11 @@
 		},
 		"DataLake_Primary_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://nchnexdep003sta.dfs.core.chinacloudapi.cn"
+			"defaultValue": "https://nchnstdep003sta.dfs.core.chinacloudapi.cn"
 		},
 		"DataLake_Secondary_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://nchnexdep004sta.dfs.core.chinacloudapi.cn"
+			"defaultValue": "https://nchnstdep004sta.dfs.core.chinacloudapi.cn"
 		},
 		"HDI_Hadoop_properties_typeProperties_userName": {
 			"type": "string",

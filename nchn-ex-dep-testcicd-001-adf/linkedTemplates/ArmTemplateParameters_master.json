@@ -30,10 +30,10 @@
 			"value": "https://nchnexdepeagl039key.vault.azure.cn/"
 		},
 		"DataLake_Primary_properties_typeProperties_url": {
-			"value": "https://nchnexdep003sta.dfs.core.chinacloudapi.cn"
+			"value": "https://nchnstdep003sta.dfs.core.chinacloudapi.cn"
 		},
 		"DataLake_Secondary_properties_typeProperties_url": {
-			"value": "https://nchnexdep004sta.dfs.core.chinacloudapi.cn"
+			"value": "https://nchnstdep004sta.dfs.core.chinacloudapi.cn"
 		},
 		"HDI_Hadoop_properties_typeProperties_userName": {
 			"value": "operator"
