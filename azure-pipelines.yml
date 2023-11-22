@@ -39,27 +39,27 @@ jobs:
       ScriptArguments: -armTemplate '$(rootPath)/one/ARMTemplateForFactory.json'  -ResourceGroupName '$(resourceGroup)' -DataFactoryName '$(adfNameFull)' -predeployment $False
       azurePowerShellVersion: 'LatestVersion'
 
-- job: linux_agent
-  pool: nestle-cn
-  steps:
-  - script: 
-      chmod u+x azcopy
-    displayName: 'enable execute'
+#- job: linux_agent
+ # pool: nestle-cn
+ # steps:
+ # - script: 
+   #   chmod u+x azcopy
+  #  displayName: 'enable execute'
 
 
 
-  - script:
-      git clone -b hive_script $(gitRepo)
-    displayName: 'git repo clone'
+#  - script:
+  #    git clone -b hive_script $(gitRepo)
+  #  displayName: 'git repo clone'
 
 
 
-  - script:
-      chmod u+x git.sh
-    displayName: 'enable git shell'
+  #- script:
+   #   chmod u+x git.sh
+  #  displayName: 'enable git shell'
 
-  - script:
-      ./git.sh
-    displayName: 'git submit'
+ # - script:
+ #     ./git.sh
+  #  displayName: 'git submit'
 
 
