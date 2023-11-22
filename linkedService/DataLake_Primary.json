@@ -4,7 +4,7 @@
 		"annotations": [],
 		"type": "AzureBlobFS",
 		"typeProperties": {
-			"url": "https://nchnstdep003sta.dfs.core.chinacloudapi.cn"
+			"url": "https://nchnexdep003sta.dfs.core.chinacloudapi.cn"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/linkedservices"
