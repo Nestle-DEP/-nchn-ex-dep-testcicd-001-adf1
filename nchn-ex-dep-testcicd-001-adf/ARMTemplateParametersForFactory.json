@@ -5,17 +5,17 @@
 		"factoryName": {
 			"value": "nchn-ex-dep-testcicd-001-adf"
 		},
-		"AzureDataLakeStorage1_accountKey": {
+		"DataLake_Secondary_accountKey": {
 			"value": ""
 		},
-		"DataLake_Secondary_accountKey": {
+		"HDI_Hadoop_password": {
+			"value": ""
+		},
+		"HDI_Hadoop_Hive_password": {
 			"value": ""
 		},
 		"ADB_properties_typeProperties_existingClusterId": {
 			"value": "0422-061610-qdhfcx4p"
-		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
-			"value": "https://nchnexdep003sta.dfs.core.chinacloudapi.cn/"
 		},
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://nchnexdeptestcicd001key.vault.azure.cn/"
@@ -34,6 +34,15 @@
 		},
 		"adf-ir_properties_typeProperties_linkedInfo_resourceId": {
 			"value": "/subscriptions/738b238c-d18b-4b67-98e2-2d514fcaa6ee/resourcegroups/nchn-ex-dep-dl-rgp/providers/Microsoft.DataFactory/factories/nchn-ex-dep-001-adf/integrationruntimes/adf-ir"
+		},
+		"HDI_Hadoop_properties_typeProperties_userName": {
+			"value": "eagle"
+		},
+		"HDI_Hadoop_Hive_properties_typeProperties_host": {
+			"value": "ha001-nchn-ex-dep-hdi-int.azurehdinsight.cn"
+		},
+		"HDI_Hadoop_Hive_properties_typeProperties_username": {
+			"value": "eagle"
 		}
 	}
 }
