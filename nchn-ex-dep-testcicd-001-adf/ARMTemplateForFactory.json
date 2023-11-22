@@ -15,14 +15,6 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'DataLake_Secondary'"
 		},
-		"HDI_Hadoop_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'HDI_Hadoop'"
-		},
-		"Hive1_password": {
-			"type": "secureString",
-			"metadata": "Secure string for 'password' of 'Hive1'"
-		},
 		"ADB_properties_typeProperties_existingClusterId": {
 			"type": "string",
 			"defaultValue": "0422-061610-qdhfcx4p"
@@ -41,23 +33,11 @@
 		},
 		"DataLake_Primary_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://nchnstdep003sta.dfs.core.chinacloudapi.cn"
+			"defaultValue": "https://nchnexdep003sta.dfs.core.chinacloudapi.cn"
 		},
 		"DataLake_Secondary_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://nchnstdep004sta.dfs.core.chinacloudapi.cn"
-		},
-		"HDI_Hadoop_properties_typeProperties_userName": {
-			"type": "string",
-			"defaultValue": "operator"
-		},
-		"Hive1_properties_typeProperties_host": {
-			"type": "string",
-			"defaultValue": "ha002-nchn-ex-dep-hdi-int.azurehdinsight.cn"
-		},
-		"Hive1_properties_typeProperties_username": {
-			"type": "string",
-			"defaultValue": "eagle"
+			"defaultValue": "https://nchnexdep004sta.dfs.core.chinacloudapi.cn"
 		},
 		"adf-ir-cnbei_properties_typeProperties_linkedInfo_resourceId": {
 			"type": "string",
@@ -72,48 +52,6 @@
 		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
 	},
 	"resources": [
-		{
-			"name": "[concat(parameters('factoryName'), '/pipeline1')]",
-			"type": "Microsoft.DataFactory/factories/pipelines",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"activities": [
-					{
-						"name": "Hive1",
-						"type": "HDInsightHive",
-						"dependsOn": [],
-						"policy": {
-							"timeout": "0.12:00:00",
-							"retry": 0,
-							"retryIntervalInSeconds": 30,
-							"secureOutput": false,
-							"secureInput": false
-						},
-						"userProperties": [],
-						"typeProperties": {
-							"scriptPath": "workspace/scripts/testcicd/testcicd",
-							"scriptLinkedService": {
-								"referenceName": "DataLake_Secondary",
-								"type": "LinkedServiceReference"
-							}
-						},
-						"linkedServiceName": {
-							"referenceName": "HDI_Hadoop",
-							"type": "LinkedServiceReference"
-						}
-					}
-				],
-				"policy": {
-					"elapsedTimeMetric": {}
-				},
-				"annotations": [],
-				"lastPublishTime": "2023-11-20T03:03:54Z"
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/DataLake_Secondary')]",
-				"[concat(variables('factoryId'), '/linkedServices/HDI_Hadoop')]"
-			]
-		},
 		{
 			"name": "[concat(parameters('factoryName'), '/pipeline2')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
@@ -134,8 +72,15 @@
 						"userProperties": [],
 						"typeProperties": {
 							"source": {
-								"type": "HiveSource",
-								"query": "select \n\t*\n\tfrom \n\teagle.ads_reason_i_m"
+								"type": "DelimitedTextSource",
+								"storeSettings": {
+									"type": "AzureBlobFSReadSettings",
+									"recursive": true,
+									"enablePartitionDiscovery": false
+								},
+								"formatSettings": {
+									"type": "DelimitedTextReadSettings"
+								}
 							},
 							"sink": {
 								"type": "DelimitedTextSink",
@@ -161,7 +106,7 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "HiveObject1",
+								"referenceName": "DelimitedText3",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -182,7 +127,7 @@
 				"lastPublishTime": "2023-11-20T03:03:54Z"
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/HiveObject1')]",
+				"[concat(variables('factoryId'), '/datasets/DelimitedText3')]",
 				"[concat(variables('factoryId'), '/datasets/DelimitedText1')]"
 			]
 		},
@@ -263,7 +208,10 @@
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
-						"type": "AzureBlobFSLocation"
+						"type": "AzureBlobFSLocation",
+						"fileName": "Crem_Goods_Sn_mapping.xlsx",
+						"folderPath": "exp/inbound/eagle/CN/userdata/goods_sn_mapping",
+						"fileSystem": "expdatalake"
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
@@ -274,24 +222,6 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/linkedServices/DataLake_Primary')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/HiveObject1')]",
-			"type": "Microsoft.DataFactory/factories/datasets",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"linkedServiceName": {
-					"referenceName": "Hive1",
-					"type": "LinkedServiceReference"
-				},
-				"annotations": [],
-				"type": "HiveObject",
-				"schema": [],
-				"typeProperties": {}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/Hive1')]"
 			]
 		},
 		{
@@ -379,75 +309,9 @@
 						"type": "SecureString",
 						"value": "[parameters('DataLake_Secondary_accountKey')]"
 					}
-				},
-				"connectVia": {
-					"referenceName": "adf-ir",
-					"type": "IntegrationRuntimeReference"
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/adf-ir')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/HDI_Hadoop')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "HDInsight",
-				"typeProperties": {
-					"clusterUri": "https://ha002-nchn-ex-dep-hdi-int.azurehdinsight.cn",
-					"userName": "[parameters('HDI_Hadoop_properties_typeProperties_userName')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('HDI_Hadoop_password')]"
-					},
-					"isEspEnabled": false,
-					"fileSystem": "workspace",
-					"linkedServiceName": {
-						"referenceName": "DataLake_Secondary",
-						"type": "LinkedServiceReference"
-					}
-				},
-				"connectVia": {
-					"referenceName": "adf-ir",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/adf-ir')]",
-				"[concat(variables('factoryId'), '/linkedServices/DataLake_Secondary')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/Hive1')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"annotations": [],
-				"type": "Hive",
-				"typeProperties": {
-					"host": "[parameters('Hive1_properties_typeProperties_host')]",
-					"port": 443,
-					"authenticationType": "WindowsAzureHDInsightService",
-					"serviceDiscoveryMode": false,
-					"useNativeQuery": false,
-					"username": "[parameters('Hive1_properties_typeProperties_username')]",
-					"password": {
-						"type": "SecureString",
-						"value": "[parameters('Hive1_password')]"
-					},
-					"enableSsl": false
-				},
-				"connectVia": {
-					"referenceName": "adf-ir",
-					"type": "IntegrationRuntimeReference"
-				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/integrationRuntimes/adf-ir')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/trigger1')]",
@@ -456,15 +320,7 @@
 			"properties": {
 				"annotations": [],
 				"runtimeState": "Stopped",
-				"pipelines": [
-					{
-						"pipelineReference": {
-							"referenceName": "pipeline1",
-							"type": "PipelineReference"
-						},
-						"parameters": {}
-					}
-				],
+				"pipelines": [],
 				"type": "ScheduleTrigger",
 				"typeProperties": {
 					"recurrence": {
@@ -483,9 +339,7 @@
 					}
 				}
 			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/pipeline1')]"
-			]
+			"dependsOn": []
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/trigger2')]",

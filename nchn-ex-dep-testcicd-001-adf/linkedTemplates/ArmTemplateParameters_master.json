@@ -11,12 +11,6 @@
 		"DataLake_Secondary_accountKey": {
 			"value": ""
 		},
-		"HDI_Hadoop_password": {
-			"value": ""
-		},
-		"Hive1_password": {
-			"value": ""
-		},
 		"ADB_properties_typeProperties_existingClusterId": {
 			"value": "0422-061610-qdhfcx4p"
 		},
@@ -30,19 +24,10 @@
 			"value": "https://nchnexdepeagl039key.vault.azure.cn/"
 		},
 		"DataLake_Primary_properties_typeProperties_url": {
-			"value": "https://nchnstdep003sta.dfs.core.chinacloudapi.cn"
+			"value": "https://nchnexdep003sta.dfs.core.chinacloudapi.cn"
 		},
 		"DataLake_Secondary_properties_typeProperties_url": {
-			"value": "https://nchnstdep004sta.dfs.core.chinacloudapi.cn"
-		},
-		"HDI_Hadoop_properties_typeProperties_userName": {
-			"value": "operator"
-		},
-		"Hive1_properties_typeProperties_host": {
-			"value": "ha002-nchn-ex-dep-hdi-int.azurehdinsight.cn"
-		},
-		"Hive1_properties_typeProperties_username": {
-			"value": "eagle"
+			"value": "https://nchnexdep004sta.dfs.core.chinacloudapi.cn"
 		},
 		"adf-ir-cnbei_properties_typeProperties_linkedInfo_resourceId": {
 			"value": "/subscriptions/3ac482b6-893e-4750-b5b8-0e94a3bd522c/resourcegroups/nchn-pr-dep-dl-rgp/providers/Microsoft.DataFactory/factories/nchn-pr-dep-001-adf/integrationruntimes/adf-ir-cnbei-prod"
