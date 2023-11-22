@@ -26,12 +26,6 @@
 		"DataLake_Secondary_properties_typeProperties_url": {
 			"value": "https://nchnexdep004sta.dfs.core.chinacloudapi.cn"
 		},
-		"adf-ir-cnbei_properties_typeProperties_linkedInfo_resourceId": {
-			"value": "/subscriptions/3ac482b6-893e-4750-b5b8-0e94a3bd522c/resourcegroups/nchn-pr-dep-dl-rgp/providers/Microsoft.DataFactory/factories/nchn-pr-dep-001-adf/integrationruntimes/adf-ir-cnbei-prod"
-		},
-		"adf-ir_properties_typeProperties_linkedInfo_resourceId": {
-			"value": "/subscriptions/738b238c-d18b-4b67-98e2-2d514fcaa6ee/resourcegroups/nchn-ex-dep-dl-rgp/providers/Microsoft.DataFactory/factories/nchn-ex-dep-001-adf/integrationruntimes/adf-ir"
-		},
 		"HDI_Hadoop_properties_typeProperties_userName": {
 			"value": "eagle"
 		},
@@ -43,6 +37,12 @@
 		},
 		"KeyVault_properties_typeProperties_baseUrl": {
 			"value": "https://nchnexdeptestcicd001key.vault.azure.cn/"
+		},
+		"adf-ir-cnbei_properties_typeProperties_linkedInfo_resourceId": {
+			"value": "/subscriptions/3ac482b6-893e-4750-b5b8-0e94a3bd522c/resourcegroups/nchn-pr-dep-dl-rgp/providers/Microsoft.DataFactory/factories/nchn-pr-dep-001-adf/integrationruntimes/adf-ir-cnbei-prod"
+		},
+		"adf-ir_properties_typeProperties_linkedInfo_resourceId": {
+			"value": "/subscriptions/738b238c-d18b-4b67-98e2-2d514fcaa6ee/resourcegroups/nchn-ex-dep-dl-rgp/providers/Microsoft.DataFactory/factories/nchn-ex-dep-001-adf/integrationruntimes/adf-ir"
 		},
 		"containerUri": {
 			"value": ""

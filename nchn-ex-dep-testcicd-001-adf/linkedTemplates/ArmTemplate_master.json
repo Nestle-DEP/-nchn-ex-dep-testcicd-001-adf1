@@ -35,14 +35,6 @@
 			"type": "string",
 			"defaultValue": "https://nchnexdep004sta.dfs.core.chinacloudapi.cn"
 		},
-		"adf-ir-cnbei_properties_typeProperties_linkedInfo_resourceId": {
-			"type": "string",
-			"defaultValue": "/subscriptions/3ac482b6-893e-4750-b5b8-0e94a3bd522c/resourcegroups/nchn-pr-dep-dl-rgp/providers/Microsoft.DataFactory/factories/nchn-pr-dep-001-adf/integrationruntimes/adf-ir-cnbei-prod"
-		},
-		"adf-ir_properties_typeProperties_linkedInfo_resourceId": {
-			"type": "string",
-			"defaultValue": "/subscriptions/738b238c-d18b-4b67-98e2-2d514fcaa6ee/resourcegroups/nchn-ex-dep-dl-rgp/providers/Microsoft.DataFactory/factories/nchn-ex-dep-001-adf/integrationruntimes/adf-ir"
-		},
 		"HDI_Hadoop_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "eagle"
@@ -58,6 +50,14 @@
 		"KeyVault_properties_typeProperties_baseUrl": {
 			"type": "string",
 			"defaultValue": "https://nchnexdeptestcicd001key.vault.azure.cn/"
+		},
+		"adf-ir-cnbei_properties_typeProperties_linkedInfo_resourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/3ac482b6-893e-4750-b5b8-0e94a3bd522c/resourcegroups/nchn-pr-dep-dl-rgp/providers/Microsoft.DataFactory/factories/nchn-pr-dep-001-adf/integrationruntimes/adf-ir-cnbei-prod"
+		},
+		"adf-ir_properties_typeProperties_linkedInfo_resourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/738b238c-d18b-4b67-98e2-2d514fcaa6ee/resourcegroups/nchn-ex-dep-dl-rgp/providers/Microsoft.DataFactory/factories/nchn-ex-dep-001-adf/integrationruntimes/adf-ir"
 		},
 		"containerUri": {
 			"type": "string",
@@ -107,12 +107,6 @@
 					"DataLake_Secondary_properties_typeProperties_url": {
 						"value": "[parameters('DataLake_Secondary_properties_typeProperties_url')]"
 					},
-					"adf-ir-cnbei_properties_typeProperties_linkedInfo_resourceId": {
-						"value": "[parameters('adf-ir-cnbei_properties_typeProperties_linkedInfo_resourceId')]"
-					},
-					"adf-ir_properties_typeProperties_linkedInfo_resourceId": {
-						"value": "[parameters('adf-ir_properties_typeProperties_linkedInfo_resourceId')]"
-					},
 					"HDI_Hadoop_Hive_properties_typeProperties_host": {
 						"value": "[parameters('HDI_Hadoop_Hive_properties_typeProperties_host')]"
 					},
@@ -121,6 +115,12 @@
 					},
 					"KeyVault_properties_typeProperties_baseUrl": {
 						"value": "[parameters('KeyVault_properties_typeProperties_baseUrl')]"
+					},
+					"adf-ir-cnbei_properties_typeProperties_linkedInfo_resourceId": {
+						"value": "[parameters('adf-ir-cnbei_properties_typeProperties_linkedInfo_resourceId')]"
+					},
+					"adf-ir_properties_typeProperties_linkedInfo_resourceId": {
+						"value": "[parameters('adf-ir_properties_typeProperties_linkedInfo_resourceId')]"
 					},
 					"HDI_Hadoop_properties_typeProperties_userName": {
 						"value": "[parameters('HDI_Hadoop_properties_typeProperties_userName')]"
