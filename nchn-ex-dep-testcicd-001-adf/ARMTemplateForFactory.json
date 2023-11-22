@@ -54,6 +54,10 @@
 		"HDI_Hadoop_Hive_properties_typeProperties_username": {
 			"type": "string",
 			"defaultValue": "eagle"
+		},
+		"KeyVault_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://nchnexdeptestcicd001key.vault.azure.cn/"
 		}
 	},
 	"variables": {
@@ -468,6 +472,19 @@
 						"value": "[parameters('HDI_Hadoop_Hive_password')]"
 					},
 					"enableSsl": false
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/KeyVault')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureKeyVault",
+				"typeProperties": {
+					"baseUrl": "[parameters('KeyVault_properties_typeProperties_baseUrl')]"
 				}
 			},
 			"dependsOn": []
