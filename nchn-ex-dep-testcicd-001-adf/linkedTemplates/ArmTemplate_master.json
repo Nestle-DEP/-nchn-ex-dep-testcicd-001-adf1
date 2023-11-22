@@ -27,10 +27,6 @@
 			"type": "string",
 			"defaultValue": "https://nchnexdeptestcicd001key.vault.azure.cn/"
 		},
-		"AzureKeyVault2_properties_typeProperties_baseUrl": {
-			"type": "string",
-			"defaultValue": "https://nchnexdepeagl039key.vault.azure.cn/"
-		},
 		"DataLake_Primary_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://nchnexdep003sta.dfs.core.chinacloudapi.cn"
@@ -100,9 +96,6 @@
 					},
 					"AzureKeyVault1_properties_typeProperties_baseUrl": {
 						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
-					},
-					"AzureKeyVault2_properties_typeProperties_baseUrl": {
-						"value": "[parameters('AzureKeyVault2_properties_typeProperties_baseUrl')]"
 					},
 					"DataLake_Primary_properties_typeProperties_url": {
 						"value": "[parameters('DataLake_Primary_properties_typeProperties_url')]"

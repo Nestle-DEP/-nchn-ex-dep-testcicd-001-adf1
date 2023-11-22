@@ -20,9 +20,6 @@
 		"AzureKeyVault1_properties_typeProperties_baseUrl": {
 			"value": "https://nchnexdeptestcicd001key.vault.azure.cn/"
 		},
-		"AzureKeyVault2_properties_typeProperties_baseUrl": {
-			"value": "https://nchnexdepeagl039key.vault.azure.cn/"
-		},
 		"DataLake_Primary_properties_typeProperties_url": {
 			"value": "https://nchnexdep003sta.dfs.core.chinacloudapi.cn"
 		},
