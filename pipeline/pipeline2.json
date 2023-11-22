@@ -16,8 +16,15 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "HiveSource",
-						"query": "select \n\t*\n\tfrom \n\teagle.ads_reason_i_m"
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
 					},
 					"sink": {
 						"type": "DelimitedTextSink",
@@ -43,7 +50,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "HiveObject1",
+						"referenceName": "DelimitedText3",
 						"type": "DatasetReference"
 					}
 				],
