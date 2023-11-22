@@ -9,7 +9,10 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobFSLocation"
+				"type": "AzureBlobFSLocation",
+				"fileName": "Crem_Goods_Sn_mapping.xlsx",
+				"folderPath": "exp/inbound/eagle/CN/userdata/goods_sn_mapping",
+				"fileSystem": "expdatalake"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
