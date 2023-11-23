@@ -14,6 +14,9 @@
 		"HDI_Hadoop_Hive_password": {
 			"value": ""
 		},
+		"AzureSqlDatabase1_connectionString": {
+			"value": ""
+		},
 		"ADB_properties_typeProperties_existingClusterId": {
 			"value": "0422-061610-qdhfcx4p"
 		},

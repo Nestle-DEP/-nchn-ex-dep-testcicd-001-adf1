@@ -19,6 +19,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'password' of 'HDI_Hadoop_Hive'"
 		},
+		"AzureSqlDatabase1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
+		},
 		"ADB_properties_typeProperties_existingClusterId": {
 			"type": "string",
 			"defaultValue": "0422-061610-qdhfcx4p"
@@ -92,6 +96,9 @@
 					"HDI_Hadoop_Hive_password": {
 						"value": "[parameters('HDI_Hadoop_Hive_password')]"
 					},
+					"AzureSqlDatabase1_connectionString": {
+						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
+					},
 					"HDI_Hadoop_password": {
 						"value": "[parameters('HDI_Hadoop_password')]"
 					},
@@ -128,6 +135,26 @@
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "nchn-ex-dep-testcicd-001-adf_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'nchn-ex-dep-testcicd-001-adf_ArmTemplate_0')]"
+			]
 		}
 	]
 }
