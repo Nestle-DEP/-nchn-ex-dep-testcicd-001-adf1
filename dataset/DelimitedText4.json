@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"fileName": "dbo.test.txt",
 				"folderPath": "exp/inbound/eagle/CN/Finance/Finance",
 				"fileSystem": "expdatalake"
 			},
