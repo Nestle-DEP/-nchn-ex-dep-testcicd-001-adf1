@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "exp/inbound/eagle/CN/HR/Employee",
+				"folderPath": "exp/inbound/eagle/CN/Finance/Finance",
 				"fileSystem": "expdatalake"
 			},
 			"columnDelimiter": ",",
