@@ -1,6 +1,8 @@
 { 
   "ex": {   
+    "AzureSqlDatabase1_connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=nchn-st-dep-001-sqs.database.chinacloudapi.cn;initial catalog=grir;user id=griruser"
   },
   "st": {	
+      "AzureSqlDatabase1_connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=nchn-st-dep-001-sqs.database.chinacloudapi.cn;initial catalog=grir;user id=griruser"
   }
 }
